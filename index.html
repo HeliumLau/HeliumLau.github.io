@@ -158,6 +158,77 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-基于github搭建hexo博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/06/基于github搭建hexo博客/">基于github搭建hexo博客</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/06/基于github搭建hexo博客/" class="archive-article-date">
+  	<time datetime="2017-02-06T13:36:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>1.安装Git<br>2.安装Node.js<br>3.有一个GitHub账号  </p>
+<h2 id="搭建流程"><a href="#搭建流程" class="headerlink" title="搭建流程"></a>搭建流程</h2><p>1.登录github网站，在github建立一个repository，名字必须为<code>XXX.github.io</code>，其中XXX是你的github账户名，例如：<code>HeliumLau.github.io</code>。</p>
+<p>2.打开Command命令窗口，下载一个淘宝NPM镜像<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code>，用cnpm安装hexo框架<code>cnpm install -g hexo-cli</code>以及<code>cnpm install hexo --save</code>，可通过命令<code>hexo -v</code>查看版本以及是否安装成功。<br>3.本地创建一个blog文件夹，任意路径。<br>4.同样通过Command命令窗口，在对应blog文件夹路径下初始化hexo项目<code>hexo init</code>。创建完成后，cd到该目录下安装生成器<code>cnpm install</code>。<br>5.要在本地建立博客就输入<code>hexo s -g</code>，再打开浏览器输入<code>localhost：4000</code>即可。<br><strong>但是，我们想要的是上线，可以在其他地方阅读该博客。</strong><br>6.为了支持github，还需要安装另外一个插件<code>npm install hexo-deployer-git --save</code>。<br>7.我们需要配置项目目录下的_config.yml文件，打开它找到最后一行，我们把github的配置信息填上去。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://github.com/HeliumLau/HeliumLau.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<p>8.当前路径输入命令行<code>hexo d</code>，按照指示输入账号密码即可登录，注意：密码输入并不会显示。<br><strong>这样一个博客就搭建完成啦！</strong>  </p>
+<h2 id="管理博客"><a href="#管理博客" class="headerlink" title="管理博客"></a>管理博客</h2><h3 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h3><p>输入创建文章命令，生成一个md文件(/blog/source/_posts/)  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new &quot;hello&quot;</div></pre></td></tr></table></figure>
+<p><img src="http://7xjzgy.com1.z0.glb.clouddn.com/image/20150701/hexo20150701031.png" alt=""><br>用编辑器打开<code>hello.md</code>文件编辑并保存。发布并更新博客<code>hexo d -g</code>。  </p>
+<h3 id="删除文章"><a href="#删除文章" class="headerlink" title="删除文章"></a>删除文章</h3><p>把 <code>/source/_posts 下的 Test01.md</code>和<code>public文件夹里的文章</code>都删除，再删除<code>db.json</code>，输入命令行<code>hexo clean</code>,再生成<code>hexo d -g</code>。</p>
+<h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h3><p>可以从github或者其他地方找到优秀的主题，下载压缩包并解压到该blog的themes文件夹下，对站点配置文件以及主题配置文件进行配置。<br>==结束后，一定要<code>hexo clean</code>清楚hexo缓存，要不上传看不到更新的效果。==</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">搭建个人博客</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/06/基于github搭建hexo博客/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-fortest" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -664,6 +735,10 @@ footer {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">搭建个人博客</a>
               </li>
             
             <div class="clearfix"></div>

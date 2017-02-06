@@ -6,57 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://HeliumLau.github.io">
-  <title>Flex Layout(转载自阮一峰的博客) | Helium Lau&#39;s secret garden</title>
+  <title>基于github搭建hexo博客 | Helium Lau&#39;s secret garden</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、骰子的布局骰子的一面，最多可以放置9个点。下面，就来看看Flex如何实现，从1个点到9个点的布局。你可以到codepen查看Demo。如果不加说明，本节的HTML模板一律如下。
-&amp;lt;div class=&amp;quot;box&amp;quot;&amp;gt;
-  &amp;lt;span class=&amp;quot;item&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;
-&amp;lt;/div&amp;gt;
-上面代码中，div元素">
+  <meta name="description" content="准备工作1.安装Git2.安装Node.js3.有一个GitHub账号  
+搭建流程1.登录github网站，在github建立一个repository，名字必须为XXX.github.io，其中XXX是你的github账户名，例如：HeliumLau.github.io。
+2.打开Command命令窗口，下载一个淘宝NPM镜像npm install -g cnpm --registry=http">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Flex Layout(转载自阮一峰的博客)">
-<meta property="og:url" content="http://HeliumLau.github.io/2017/02/06/fortest/index.html">
+<meta property="og:title" content="基于github搭建hexo博客">
+<meta property="og:url" content="http://HeliumLau.github.io/2017/02/06/基于github搭建hexo博客/index.html">
 <meta property="og:site_name" content="Helium Lau's secret garden">
-<meta property="og:description" content="一、骰子的布局骰子的一面，最多可以放置9个点。下面，就来看看Flex如何实现，从1个点到9个点的布局。你可以到codepen查看Demo。如果不加说明，本节的HTML模板一律如下。
-&amp;lt;div class=&amp;quot;box&amp;quot;&amp;gt;
-  &amp;lt;span class=&amp;quot;item&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;
-&amp;lt;/div&amp;gt;
-上面代码中，div元素">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071328.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071329.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071301.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071302.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071303.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071304.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071306.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071307.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071308.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071309.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071310.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071311.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071312.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071313.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071314.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071315.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071316.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071317.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071318.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071319.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071320.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071321.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071322.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071323.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071324.png">
-<meta property="og:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071325.png">
-<meta property="og:updated_time" content="2017-02-06T08:26:08.229Z">
+<meta property="og:description" content="准备工作1.安装Git2.安装Node.js3.有一个GitHub账号  
+搭建流程1.登录github网站，在github建立一个repository，名字必须为XXX.github.io，其中XXX是你的github账户名，例如：HeliumLau.github.io。
+2.打开Command命令窗口，下载一个淘宝NPM镜像npm install -g cnpm --registry=http">
+<meta property="og:image" content="http://7xjzgy.com1.z0.glb.clouddn.com/image/20150701/hexo20150701031.png">
+<meta property="og:updated_time" content="2017-02-06T13:37:10.809Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Flex Layout(转载自阮一峰的博客)">
-<meta name="twitter:description" content="一、骰子的布局骰子的一面，最多可以放置9个点。下面，就来看看Flex如何实现，从1个点到9个点的布局。你可以到codepen查看Demo。如果不加说明，本节的HTML模板一律如下。
-&amp;lt;div class=&amp;quot;box&amp;quot;&amp;gt;
-  &amp;lt;span class=&amp;quot;item&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;
-&amp;lt;/div&amp;gt;
-上面代码中，div元素">
-<meta name="twitter:image" content="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071328.png">
+<meta name="twitter:title" content="基于github搭建hexo博客">
+<meta name="twitter:description" content="准备工作1.安装Git2.安装Node.js3.有一个GitHub账号  
+搭建流程1.登录github网站，在github建立一个repository，名字必须为XXX.github.io，其中XXX是你的github账户名，例如：HeliumLau.github.io。
+2.打开Command命令窗口，下载一个淘宝NPM镜像npm install -g cnpm --registry=http">
+<meta name="twitter:image" content="http://7xjzgy.com1.z0.glb.clouddn.com/image/20150701/hexo20150701031.png">
   
     <link rel="alternative" href="/atom.xml" title="Helium Lau&#39;s secret garden" type="application/atom+xml">
   
@@ -196,323 +165,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-fortest" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-基于github搭建hexo博客" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Flex Layout(转载自阮一峰的博客)
+      基于github搭建hexo博客
     </h1>
   
 
         
-        <a href="/2017/02/06/fortest/" class="archive-article-date">
-  	<time datetime="2017-02-06T07:10:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
+        <a href="/2017/02/06/基于github搭建hexo博客/" class="archive-article-date">
+  	<time datetime="2017-02-06T13:36:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、骰子的布局"><a href="#一、骰子的布局" class="headerlink" title="一、骰子的布局"></a>一、骰子的布局</h2><p>骰子的一面，最多可以放置9个点。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071328.png" alt=""><br>下面，就来看看Flex如何实现，从1个点到9个点的布局。你可以到codepen查看Demo。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071329.png" alt=""><br>如果不加说明，本节的HTML模板一律如下。</p>
-<pre><code>&lt;div class=&quot;box&quot;&gt;
-  &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-&lt;/div&gt;
-</code></pre><p>上面代码中，div元素（代表骰子的一个面）是Flex容器，span元素（代表一个点）是Flex项目。如果有多个项目，就要添加多个span元素，以此类推。  </p>
-<h3 id="1-1-单项目"><a href="#1-1-单项目" class="headerlink" title="1.1 单项目"></a>1.1 单项目</h3><p>首先，只有左上角1个点的情况。Flex布局默认就是首行左对齐，所以一行代码就够了。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071301.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-}
-</code></pre><p>设置项目的对齐方式，就能实现居中对齐和右对齐。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071302.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  justify-content: center;
-}
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071303.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  justify-content: flex-end;
-}
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071304.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  align-items: center;
-}
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071306.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071307.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-</code></pre><h3 id="1-2-双项目"><a href="#1-2-双项目" class="headerlink" title="1.2 双项目"></a>1.2 双项目</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071308.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  justify-content: space-between;
-}
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071309.png" alt="">   </p>
-<pre><code>.box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071310.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}  
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071311.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071312.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-}
+        <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>1.安装Git<br>2.安装Node.js<br>3.有一个GitHub账号  </p>
+<h2 id="搭建流程"><a href="#搭建流程" class="headerlink" title="搭建流程"></a>搭建流程</h2><p>1.登录github网站，在github建立一个repository，名字必须为<code>XXX.github.io</code>，其中XXX是你的github账户名，例如：<code>HeliumLau.github.io</code>。</p>
+<p>2.打开Command命令窗口，下载一个淘宝NPM镜像<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code>，用cnpm安装hexo框架<code>cnpm install -g hexo-cli</code>以及<code>cnpm install hexo --save</code>，可通过命令<code>hexo -v</code>查看版本以及是否安装成功。<br>3.本地创建一个blog文件夹，任意路径。<br>4.同样通过Command命令窗口，在对应blog文件夹路径下初始化hexo项目<code>hexo init</code>。创建完成后，cd到该目录下安装生成器<code>cnpm install</code>。<br>5.要在本地建立博客就输入<code>hexo s -g</code>，再打开浏览器输入<code>localhost：4000</code>即可。<br><strong>但是，我们想要的是上线，可以在其他地方阅读该博客。</strong><br>6.为了支持github，还需要安装另外一个插件<code>npm install hexo-deployer-git --save</code>。<br>7.我们需要配置项目目录下的_config.yml文件，打开它找到最后一行，我们把github的配置信息填上去。  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://github.com/HeliumLau/HeliumLau.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<p>8.当前路径输入命令行<code>hexo d</code>，按照指示输入账号密码即可登录，注意：密码输入并不会显示。<br><strong>这样一个博客就搭建完成啦！</strong>  </p>
+<h2 id="管理博客"><a href="#管理博客" class="headerlink" title="管理博客"></a>管理博客</h2><h3 id="写文章"><a href="#写文章" class="headerlink" title="写文章"></a>写文章</h3><p>输入创建文章命令，生成一个md文件(/blog/source/_posts/)  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new &quot;hello&quot;</div></pre></td></tr></table></figure>
+<p><img src="http://7xjzgy.com1.z0.glb.clouddn.com/image/20150701/hexo20150701031.png" alt=""><br>用编辑器打开<code>hello.md</code>文件编辑并保存。发布并更新博客<code>hexo d -g</code>。  </p>
+<h3 id="删除文章"><a href="#删除文章" class="headerlink" title="删除文章"></a>删除文章</h3><p>把 <code>/source/_posts 下的 Test01.md</code>和<code>public文件夹里的文章</code>都删除，再删除<code>db.json</code>，输入命令行<code>hexo clean</code>,再生成<code>hexo d -g</code>。</p>
+<h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h3><p>可以从github或者其他地方找到优秀的主题，下载压缩包并解压到该blog的themes文件夹下，对站点配置文件以及主题配置文件进行配置。<br>==结束后，一定要<code>hexo clean</code>清楚hexo缓存，要不上传看不到更新的效果。==</p>
 
-.item:nth-child(2) {
-  align-self: center;
-}  
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071313.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  justify-content: space-between;
-}
-
-.item:nth-child(2) {
-  align-self: flex-end;
-}
-</code></pre><h3 id="1-3-三项目"><a href="#1-3-三项目" class="headerlink" title="1.3 三项目"></a>1.3 三项目</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071314.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-}
-
-.item:nth-child(2) {
-  align-self: center;
-}
-
-.item:nth-child(3) {
-  align-self: flex-end;
-}
-</code></pre><h3 id="1-4-四项目"><a href="#1-4-四项目" class="headerlink" title="1.4 四项目"></a>1.4 四项目</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071315.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-content: space-between;
-}
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071316.png" alt=""><br>HTML代码如下。</p>
-<pre><code>&lt;div class=&quot;box&quot;&gt;
-  &lt;div class=&quot;column&quot;&gt;
-    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;column&quot;&gt;
-    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre><p>CSS代码如下。</p>
-<pre><code>.box {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-between;
-}
-
-.column {
-  flex-basis: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-</code></pre><h3 id="1-5-六项目"><a href="#1-5-六项目" class="headerlink" title="1.5 六项目"></a>1.5 六项目</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071317.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-between;
-}
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071318.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: space-between;
-}
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071319.png" alt=""><br>HTML代码如下。</p>
-<pre><code>&lt;div class=&quot;box&quot;&gt;
-  &lt;div class=&quot;row&quot;&gt;
-    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;row&quot;&gt;
-    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;row&quot;&gt;
-     &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-     &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre><p>CSS代码如下。</p>
-<pre><code>.box {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.row{
-  flex-basis: 100%;
-  display:flex;
-}
-
-.row:nth-child(2){
-  justify-content: center;
-}
-
-.row:nth-child(3){
-  justify-content: space-between;
-}
-</code></pre><h3 id="1-6-九项目"><a href="#1-6-九项目" class="headerlink" title="1.6 九项目"></a>1.6 九项目</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071320.png" alt="">  </p>
-<h2 id="二、网格布局"><a href="#二、网格布局" class="headerlink" title="二、网格布局"></a>二、网格布局</h2><h3 id="2-1-基本网格布局"><a href="#2-1-基本网格布局" class="headerlink" title="2.1 基本网格布局"></a>2.1 基本网格布局</h3><p>最简单的网格布局，就是平均分布。在容器里面平均分配空间，跟上面的骰子布局很像，但是需要设置项目的自动缩放。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071321.png" alt=""><br>HTML代码如下。</p>
-<pre><code>&lt;div class=&quot;Grid&quot;&gt;
-  &lt;div class=&quot;Grid-cell&quot;&gt;...&lt;/div&gt;
-  &lt;div class=&quot;Grid-cell&quot;&gt;...&lt;/div&gt;
-  &lt;div class=&quot;Grid-cell&quot;&gt;...&lt;/div&gt;
-&lt;/div&gt;
-</code></pre><p>CSS代码如下。</p>
-<pre><code>.Grid {
-  display: flex;
-}
-
-.Grid-cell {
-  flex: 1;
-}
-</code></pre><h3 id="2-2-百分比布局"><a href="#2-2-百分比布局" class="headerlink" title="2.2 百分比布局"></a>2.2 百分比布局</h3><p>某个网格的宽度为固定的百分比，其余网格平均分配剩余的空间。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071322.png" alt=""><br>HTML代码如下。</p>
-<pre><code>&lt;div class=&quot;Grid&quot;&gt;
-  &lt;div class=&quot;Grid-cell u-1of4&quot;&gt;...&lt;/div&gt;
-  &lt;div class=&quot;Grid-cell&quot;&gt;...&lt;/div&gt;
-  &lt;div class=&quot;Grid-cell u-1of3&quot;&gt;...&lt;/div&gt;
-&lt;/div&gt;
-
-
-.Grid {
-  display: flex;
-}
-
-.Grid-cell {
-  flex: 1;
-}
-
-.Grid-cell.u-full {
-  flex: 0 0 100%;
-}
-
-.Grid-cell.u-1of2 {
-  flex: 0 0 50%;
-}
-
-.Grid-cell.u-1of3 {
-  flex: 0 0 33.3333%;
-}
-
-.Grid-cell.u-1of4 {
-  flex: 0 0 25%;
-}
-</code></pre><h2 id="三、圣杯布局"><a href="#三、圣杯布局" class="headerlink" title="三、圣杯布局"></a>三、圣杯布局</h2><p>圣杯布局（Holy Grail Layout）指的是一种最常见的网站布局。页面从上到下，分成三个部分：头部（header），躯干（body），尾部（footer）。其中躯干又水平分成三栏，从左到右为：导航、主栏、副栏。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071323.png" alt=""><br>HTML代码如下。</p>
-<pre><code>&lt;body class=&quot;HolyGrail&quot;&gt;
-  &lt;header&gt;...&lt;/header&gt;
-  &lt;div class=&quot;HolyGrail-body&quot;&gt;
-    &lt;main class=&quot;HolyGrail-content&quot;&gt;...&lt;/main&gt;
-    &lt;nav class=&quot;HolyGrail-nav&quot;&gt;...&lt;/nav&gt;
-    &lt;aside class=&quot;HolyGrail-ads&quot;&gt;...&lt;/aside&gt;
-  &lt;/div&gt;
-  &lt;footer&gt;...&lt;/footer&gt;
-&lt;/body&gt;
-</code></pre><p>CSS代码如下。</p>
-<pre><code>.HolyGrail {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-header,
-footer {
-  flex: 1;
-}
-
-.HolyGrail-body {
-  display: flex;
-  flex: 1;
-}
-
-.HolyGrail-content {
-  flex: 1;
-}
-
-.HolyGrail-nav, .HolyGrail-ads {
-  /* 两个边栏的宽度设为12em */
-  flex: 0 0 12em;
-}
-
-.HolyGrail-nav {
-  /* 导航放到最左边 */
-  order: -1;
-}
-</code></pre><p>如果是小屏幕，躯干的三栏自动变为垂直叠加。</p>
-<pre><code>@media (max-width: 768px) {
-  .HolyGrail-body {
-    flex-direction: column;
-    flex: 1;
-  }
-  .HolyGrail-nav,
-  .HolyGrail-ads,
-  .HolyGrail-content {
-    flex: auto;
-  }
-}
-</code></pre><h2 id="四、输入框的布局"><a href="#四、输入框的布局" class="headerlink" title="四、输入框的布局"></a>四、输入框的布局</h2><p>我们常常需要在输入框的前方添加提示，后方添加按钮。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071324.png" alt=""><br>HTML代码如下。</p>
-<pre><code>&lt;div class=&quot;InputAddOn&quot;&gt;
-  &lt;span class=&quot;InputAddOn-item&quot;&gt;...&lt;/span&gt;
-  &lt;input class=&quot;InputAddOn-field&quot;&gt;
-  &lt;button class=&quot;InputAddOn-item&quot;&gt;...&lt;/button&gt;
-&lt;/div&gt;
-</code></pre><p>CSS代码如下。</p>
-<pre><code>.InputAddOn {
-  display: flex;
-}
-
-.InputAddOn-field {
-  flex: 1;
-}
-</code></pre><h2 id="五、悬挂式布局"><a href="#五、悬挂式布局" class="headerlink" title="五、悬挂式布局"></a>五、悬挂式布局</h2><p>有时，主栏的左侧或右侧，需要添加一个图片栏。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071325.png" alt=""><br>HTML代码如下。</p>
-<pre><code>&lt;div class=&quot;Media&quot;&gt;
-  &lt;img class=&quot;Media-figure&quot; src=&quot;&quot; alt=&quot;&quot;&gt;
-  &lt;p class=&quot;Media-body&quot;&gt;...&lt;/p&gt;
-&lt;/div&gt;
-</code></pre><p>CSS代码如下。</p>
-<pre><code>.Media {
-  display: flex;
-  align-items: flex-start;
-}
-
-.Media-figure {
-  margin-right: 1em;
-}
-
-.Media-body {
-  flex: 1;
-}
-</code></pre>
       
 
       
@@ -546,7 +229,7 @@ footer {
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">CSS布局</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">搭建个人博客</a>
         		</li>
       		
 		</ul>
@@ -602,7 +285,7 @@ footer {
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://HeliumLau.github.io/2017/02/06/fortest/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://HeliumLau.github.io/2017/02/06/基于github搭建hexo博客/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -616,18 +299,9 @@ footer {
   
 <nav id="article-nav">
   
-    <a href="/2017/02/06/基于github搭建hexo博客/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          基于github搭建hexo博客
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/02/06/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2017/02/06/fortest/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Flex Layout(转载自阮一峰的博客)</div>
       <i class="icon-circle-right"></i>
     </a>
   
