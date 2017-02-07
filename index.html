@@ -179,12 +179,46 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>语法如下：</p>
-<p>@font-face {<br>    font-family: Myfontname;<br>    src: XXX; (.ttf;.eot)<br>}<br>p {<br>    font-family: Myfontname;<br>}<br>例子：</p>
-<p>&lt;!DOCTYPE html&gt;</p>
-<p><html lang="en"></html></p>
-<p><head><br>    <meta charset="UTF-8"><br>    <title>Document</title><br>    <style><br>        @font-face {<br>            font-family: “ChinaStyle”;<br>            src: url(ChinaStyle.ttf);<br>        }<br>        h1 {<br>            font-family: “ChinaStyle”;<br>            font-size: 4em;<br>        }<br>    </style><br></head></p>
-<p><body><br>    <h1>中国龙</h1><br></body><br><br>注意一下，字体的后缀很重要，事关能不能再浏览器中正常显示</p>
-<p>@font-face {<br>    font-family: ‘icon-font’;<br>    src:url(‘/assets/fonts/jiaicon.eot’);<br>    src:url(‘/assets/fonts/jiaicon.eot’) format(‘embedded-opentype’),<br>        url(‘/assets/fonts/jiaicon.woff’) format(‘woff’),<br>        url(‘/assets/fonts/jiaicon.ttf’) format(‘truetype’),<br>        url(‘/assets/fonts/jiaicon.svg’) format(‘svg’);<br>    font-weight: normal;<br>    font-style: normal;<br>}<br>除了格式外，好像还有其他因素会影响到字体的显示。<br>比如说如果继续设置其他字体会导致显示无效。<br>另外还有一个限制，那就是，中文导入字体不像英文字体，文件往往有几M，比较大。</p>
+<pre><code>@font-face {
+    font-family: Myfontname;
+    src: XXX; (.ttf;.eot)
+}
+p {
+    font-family: Myfontname;
+}
+</code></pre><p>例子：</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;style&gt;
+        @font-face {
+            font-family: &quot;ChinaStyle&quot;;
+            src: url(ChinaStyle.ttf);
+        }
+        h1 {
+            font-family: &quot;ChinaStyle&quot;;
+            font-size: 4em;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;中国龙&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>注意一下，字体的后缀很重要，事关能不能再浏览器中正常显示</p>
+<pre><code>@font-face {
+    font-family: &apos;icon-font&apos;;
+    src:url(&apos;/assets/fonts/jiaicon.eot&apos;);
+    src:url(&apos;/assets/fonts/jiaicon.eot&apos;) format(&apos;embedded-opentype&apos;),
+        url(&apos;/assets/fonts/jiaicon.woff&apos;) format(&apos;woff&apos;),
+        url(&apos;/assets/fonts/jiaicon.ttf&apos;) format(&apos;truetype&apos;),
+        url(&apos;/assets/fonts/jiaicon.svg&apos;) format(&apos;svg&apos;);
+    font-weight: normal;
+    font-style: normal;
+}
+</code></pre><p>除了格式外，好像还有其他因素会影响到字体的显示。<br>比如说如果继续设置其他字体会导致显示无效。<br>另外还有一个限制，那就是，中文导入字体不像英文字体，文件往往有几M，比较大。</p>
 
       
 
@@ -802,15 +836,15 @@ footer {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">搭建个人博客</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
             
             <div class="clearfix"></div>
