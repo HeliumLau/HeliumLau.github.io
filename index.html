@@ -158,6 +158,74 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-css字体导入" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/07/css字体导入/">CSS字体的导入</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/07/css字体导入/" class="archive-article-date">
+  	<time datetime="2017-02-07T07:10:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>语法如下：</p>
+<p>@font-face {<br>    font-family: Myfontname;<br>    src: XXX; (.ttf;.eot)<br>}<br>p {<br>    font-family: Myfontname;<br>}<br>例子：</p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><html lang="en"></html></p>
+<p><head><br>    <meta charset="UTF-8"><br>    <title>Document</title><br>    <style><br>        @font-face {<br>            font-family: “ChinaStyle”;<br>            src: url(ChinaStyle.ttf);<br>        }<br>        h1 {<br>            font-family: “ChinaStyle”;<br>            font-size: 4em;<br>        }<br>    </style><br></head></p>
+<p><body><br>    <h1>中国龙</h1><br></body><br><br>注意一下，字体的后缀很重要，事关能不能再浏览器中正常显示</p>
+<p>@font-face {<br>    font-family: ‘icon-font’;<br>    src:url(‘/assets/fonts/jiaicon.eot’);<br>    src:url(‘/assets/fonts/jiaicon.eot’) format(‘embedded-opentype’),<br>        url(‘/assets/fonts/jiaicon.woff’) format(‘woff’),<br>        url(‘/assets/fonts/jiaicon.ttf’) format(‘truetype’),<br>        url(‘/assets/fonts/jiaicon.svg’) format(‘svg’);<br>    font-weight: normal;<br>    font-style: normal;<br>}<br>除了格式外，好像还有其他因素会影响到字体的显示。<br>比如说如果继续设置其他字体会导致显示无效。<br>另外还有一个限制，那就是，中文导入字体不像英文字体，文件往往有几M，比较大。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/07/css字体导入/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-基于github搭建hexo博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -739,6 +807,10 @@ footer {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">搭建个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
             
             <div class="clearfix"></div>

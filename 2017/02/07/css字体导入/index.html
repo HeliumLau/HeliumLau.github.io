@@ -6,17 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://HeliumLau.github.io">
-  <title>Archives | Helium Lau&#39;s secret garden</title>
+  <title>CSS字体的导入 | Helium Lau&#39;s secret garden</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="graduated from TianJin University in 2015. Used to work as a QC(quality control) engineer in shipyard. Now I want to explore a new world which is more interesting.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Helium Lau's secret garden">
-<meta property="og:url" content="http://HeliumLau.github.io/archives/index.html">
+  <meta name="description" content="语法如下：
+@font-face {    font-family: Myfontname;    src: XXX; (.ttf;.eot)}p {    font-family: Myfontname;}例子：
+&amp;lt;!DOCTYPE html&amp;gt;
+
+        Document            @font-face {            font-family: “Chi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS字体的导入">
+<meta property="og:url" content="http://HeliumLau.github.io/2017/02/07/css字体导入/index.html">
 <meta property="og:site_name" content="Helium Lau's secret garden">
-<meta property="og:description" content="graduated from TianJin University in 2015. Used to work as a QC(quality control) engineer in shipyard. Now I want to explore a new world which is more interesting.">
+<meta property="og:description" content="语法如下：
+@font-face {    font-family: Myfontname;    src: XXX; (.ttf;.eot)}p {    font-family: Myfontname;}例子：
+&amp;lt;!DOCTYPE html&amp;gt;
+
+        Document            @font-face {            font-family: “Chi">
+<meta property="og:updated_time" content="2017-02-07T06:09:46.754Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Helium Lau's secret garden">
-<meta name="twitter:description" content="graduated from TianJin University in 2015. Used to work as a QC(quality control) engineer in shipyard. Now I want to explore a new world which is more interesting.">
+<meta name="twitter:title" content="CSS字体的导入">
+<meta name="twitter:description" content="语法如下：
+@font-face {    font-family: Myfontname;    src: XXX; (.ttf;.eot)}p {    font-family: Myfontname;}例子：
+&amp;lt;!DOCTYPE html&amp;gt;
+
+        Document            @font-face {            font-family: “Chi">
   
     <link rel="alternative" href="/atom.xml" title="Helium Lau&#39;s secret garden" type="application/atom+xml">
   
@@ -156,36 +169,62 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-css字体导入" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/07/css字体导入/" class="archive-article-date">
-  	<time datetime="2017-02-07T07:10:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-07</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/07/css字体导入/">CSS字体的导入</a>
+    <h1 class="article-title" itemprop="name">
+      CSS字体的导入
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/02/07/css字体导入/" class="archive-article-date">
+  	<time datetime="2017-02-07T07:10:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>语法如下：</p>
+<p>@font-face {<br>    font-family: Myfontname;<br>    src: XXX; (.ttf;.eot)<br>}<br>p {<br>    font-family: Myfontname;<br>}<br>例子：</p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><html lang="en"></html></p>
+<p><head><br>    <meta charset="UTF-8"><br>    <title>Document</title><br>    <style><br>        @font-face {<br>            font-family: “ChinaStyle”;<br>            src: url(ChinaStyle.ttf);<br>        }<br>        h1 {<br>            font-family: “ChinaStyle”;<br>            font-size: 4em;<br>        }<br>    </style><br></head></p>
+<p><body><br>    <h1>中国龙</h1><br></body><br><br>注意一下，字体的后缀很重要，事关能不能再浏览器中正常显示</p>
+<p>@font-face {<br>    font-family: ‘icon-font’;<br>    src:url(‘/assets/fonts/jiaicon.eot’);<br>    src:url(‘/assets/fonts/jiaicon.eot’) format(‘embedded-opentype’),<br>        url(‘/assets/fonts/jiaicon.woff’) format(‘woff’),<br>        url(‘/assets/fonts/jiaicon.ttf’) format(‘truetype’),<br>        url(‘/assets/fonts/jiaicon.svg’) format(‘svg’);<br>    font-weight: normal;<br>    font-style: normal;<br>}<br>除了格式外，好像还有其他因素会影响到字体的显示。<br>比如说如果继续设置其他字体会导致显示无效。<br>另外还有一个限制，那就是，中文导入字体不像英文字体，文件往往有几M，比较大。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -197,122 +236,88 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://HeliumLau.github.io/2017/02/07/css字体导入/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/06/基于github搭建hexo博客/" class="archive-article-date">
-  	<time datetime="2017-02-06T13:36:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/06/基于github搭建hexo博客/">基于github搭建hexo博客</a>
-    </h1>
+  
+    <a href="/2017/02/06/基于github搭建hexo博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基于github搭建hexo博客</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">搭建个人博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/06/fortest/" class="archive-article-date">
-  	<time datetime="2017-02-06T07:10:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/06/fortest/">Flex Layout(转载自阮一峰的博客)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">CSS布局</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/06/hello-world/" class="archive-article-date">
-  	<time datetime="2017-02-06T06:26:35.163Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/06/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -335,8 +340,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
