@@ -158,6 +158,78 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-关于transform属性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/09/关于transform属性/">关于transform属性</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/09/关于transform属性/" class="archive-article-date">
+  	<time datetime="2017-02-09T03:11:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>CSS3有个非常强大的工具 2D动画 transform，可作用于内联或者块状元素，该属性可以旋转、缩放和移动元素。  </p>
+<h2 id="transform的基本语法"><a href="#transform的基本语法" class="headerlink" title="transform的基本语法"></a>transform的基本语法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">transform：none|&lt;transform-function&gt;[&lt;transform-function&gt;]*;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;transform-function&gt; :matrix()      定义矩阵变换</div><div class="line">                      translate()   移动元素</div><div class="line">                      scale()       缩放元素</div><div class="line">                      rotate()      旋转元素</div><div class="line">                      skew()        倾斜元素</div></pre></td></tr></table></figure>
+<p>兼容写法：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">-webkit-transform  </div><div class="line">   -moz-transform</div><div class="line">     -o-transform</div><div class="line">             滤镜</div></pre></td></tr></table></figure>
+<p>一般写在伪类：hover里面  </p>
+<h2 id="关于旋转在IE的实现"><a href="#关于旋转在IE的实现" class="headerlink" title="关于旋转在IE的实现"></a>关于旋转在IE的实现</h2><p>语法：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">filter:progid:DXImageTransform.Microsoft.BasicImage(enabled=bEnabled,grayScale=bGray,mirror=bMirror,opacity=fOpacity,Xray=bXray)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=3);</div></pre></td></tr></table></figure>
+<h2 id="关于缩放在IE的实现（对不起，暂时无法实现）"><a href="#关于缩放在IE的实现（对不起，暂时无法实现）" class="headerlink" title="关于缩放在IE的实现（对不起，暂时无法实现）"></a>关于缩放在IE的实现（对不起，暂时无法实现）</h2><p>在其他浏览器中的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=&quot;en&quot;&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">	&lt;title&gt;Document&lt;/title&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">		.test ul &#123;</div><div class="line">			list-style: none;</div><div class="line">		&#125;</div><div class="line">		.test li &#123;</div><div class="line">			float: left;</div><div class="line">			width: 100px;</div><div class="line">			background: #CCC;</div><div class="line">			margin-left: 3px;</div><div class="line">			line-height: 30px;</div><div class="line">		&#125;</div><div class="line">		.test a &#123;</div><div class="line">			display: block;</div><div class="line">			text-align: center;</div><div class="line">			height: 30px;</div><div class="line">			-webkit-transition: -webkit-transform .5s ease-in;</div><div class="line">			   -moz-transition: -moz-transform .5s ease-in;</div><div class="line">			     -o-transition: -o-transform .5s ease-in;</div><div class="line">			        transition: transform .5s ease-in;</div><div class="line">		&#125;</div><div class="line">		.test a:link &#123;</div><div class="line">			color: #666;</div><div class="line">			text-decoration: none;</div><div class="line">		&#125;</div><div class="line">		.test a:visited &#123;</div><div class="line">			color: #666;</div><div class="line">			text-decoration: none;</div><div class="line">		&#125;</div><div class="line">		.test a:hover &#123;</div><div class="line">			color: #FFF;</div><div class="line">			font-weight: bold;</div><div class="line">			text-decoration: none;</div><div class="line">			background-color: #000;</div><div class="line">			-webkit-transform: scale(2);</div><div class="line">			   -moz-transform: scale(2);</div><div class="line">			        transform: scale(2);</div><div class="line">		&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;test&quot;&gt;</div><div class="line">		&lt;ul&gt;</div><div class="line">			&lt;li&gt;&lt;a href=&quot;&quot;&gt;首页&lt;/a&gt;&lt;/li&gt;</div><div class="line">			&lt;li&gt;&lt;a href=&quot;&quot;&gt;首页&lt;/a&gt;&lt;/li&gt;</div><div class="line">			&lt;li&gt;&lt;a href=&quot;&quot;&gt;首页&lt;/a&gt;&lt;/li&gt;</div><div class="line">			&lt;li&gt;&lt;a href=&quot;&quot;&gt;首页&lt;/a&gt;&lt;/li&gt;</div><div class="line">			&lt;li&gt;&lt;a href=&quot;&quot;&gt;首页&lt;/a&gt;&lt;/li&gt;</div><div class="line">			&lt;li&gt;&lt;a href=&quot;&quot;&gt;首页&lt;/a&gt;&lt;/li&gt;</div><div class="line">		&lt;/ul&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
+<h2 id="关于移动动画的实现（IE没有）"><a href="#关于移动动画的实现（IE没有）" class="headerlink" title="关于移动动画的实现（IE没有）"></a>关于移动动画的实现（IE没有）</h2><h2 id="关于倾斜动画的实现（IE没有）"><a href="#关于倾斜动画的实现（IE没有）" class="headerlink" title="关于倾斜动画的实现（IE没有）"></a>关于倾斜动画的实现（IE没有）</h2><h2 id="关于变形动画的实现"><a href="#关于变形动画的实现" class="headerlink" title="关于变形动画的实现"></a>关于变形动画的实现</h2><h2 id="自定义变形"><a href="#自定义变形" class="headerlink" title="自定义变形"></a>自定义变形</h2><p>元素的变化默认是以对象的中心点为原点，也就是transform-origin默认值是50%，50%。<br>元素的变化是否会影响到文档的其他元素？<br>好像不会，但是等待继续挖掘。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/09/关于transform属性/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-css字体导入" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -845,6 +917,10 @@ footer {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">搭建个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
             
             <div class="clearfix"></div>
