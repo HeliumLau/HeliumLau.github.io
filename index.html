@@ -158,6 +158,96 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-express试验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/09/express试验/">express试验</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/09/express试验/" class="archive-article-date">
+  	<time datetime="2017-02-09T05:41:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>什么是Express？</strong><br>Express是Node.js的一个Web框架。Web应用程序有共同的模式，所以使用框架来构建经常事办功倍。<br><strong>为什么使用Express</strong><br>Express是个轻量级的框架，这就意味着它不做太多假定，但却足以避免用户重新发明轮子。</p>
+<h2 id="创建一个基础的Express站点"><a href="#创建一个基础的Express站点" class="headerlink" title="创建一个基础的Express站点"></a>创建一个基础的Express站点</h2><p>遇到了麻烦，通过指令<code>npm install -g express</code>安装了全局express，但是在指令<code>express express_example</code>时出现错误。<br>于是使用另外一种方案，直接cd然后不安装全局对象<code>npm install express</code>，继续<code>express</code>创建，又失效了。</p>
+<p>查询网络，猜测原因是版本更新了。@4.14.0，可以重新安装个<code>express@3.5.0</code>。  </p>
+<p>或者，还要安装一个命令工具<code>npm install -g express-generator</code>，然后用express创建一个工程<code>express helloworld</code>，创建好项目后还需要用npm进行添加依赖和启动<code>cd helloworld</code>，<code>npm install</code>，而且启动不再是<code>node app.js</code> 而是<code>npm start</code>。但是在创建依赖<code>npm install</code>的时候出现了问题，<code>jade</code>改名成了<code>pug</code>所以需要重新安装<code>pug</code>。（网上说还需要安装<code>npm install -g pug-cli</code>），于是用命令<code>npm install -g pug</code><br>下载pug模块，但是安装一直处于等待过程中。（国内防火墙的问题，可以翻墙下载）或者使用镜像。  </p>
+<h3 id="探索Express"><a href="#探索Express" class="headerlink" title="探索Express"></a>探索Express</h3><p>打开了<code>helloworld</code>文件夹后，有以下文件：<br>1.app.js是用来启动应用程序文件夹。<br>2.node_modules用来保存package.json中定义并且已经安装的Node模块。<br>3.package.json提高应用程序的信息。<br>4.public提供给Web进行服务的公共文件夹。<br>5.routes文件夹保存了定义了应用程序该响应页面的路由。<br>6.views文件夹定义应用程序的布局。  </p>
+<h3 id="jade是个基于缩进的模板引擎"><a href="#jade是个基于缩进的模板引擎" class="headerlink" title="jade是个基于缩进的模板引擎"></a>jade是个基于缩进的模板引擎</h3><p><strong>HTML和Jade比较</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;wrapper&quot;&gt;</div><div class="line">    &lt;h1&gt;My holiday in Prague&lt;/h1&gt;</div><div class="line">    &lt;p&gt;XXX&lt;/p&gt;</div><div class="line">    &lt;img src=&apos;&apos; alt=&apos;&apos; /&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.wrapper</div><div class="line">    h1 My holiday in Prague  </div><div class="line">    p XXX  </div><div class="line">    img(src=&apos;&apos;,alt=&apos;&apos;)</div></pre></td></tr></table></figure>
+<p>可以看出来，Jade比HTML简洁，是采用缩进来定义HTML文档层次结构，在Jade中无需使用标记，编译模板的时候会自动加入&lt;&gt;字符，同样也不需要关闭HTML标记，在Jade生成HTML的时候会为我们关闭标记。</p>
+<p><strong>为什么要用Jade？</strong><br>因为它使得应用程序可以动态输出数据到HTML中。<br>比如显示一组保存在数据库中的博客帖子，创建单一的模板用于显示不同的博客帖子，按变量的值更改页面的<title></title>元素，创建可跨模板重用的页眉和页脚内容。  </p>
+<p><strong>Jade定义页面结构</strong><br><code>section#wrapper</code><br><code>p.highlight</code><br><code>section#wrapper.class-name</code><br><code>p.first.section.third.fourth</code>   </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">p</div><div class="line">  span</div></pre></td></tr></table></figure>
+<p><code>h1 Very important heading</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">p</div><div class="line"> | Text can be over</div><div class="line"> | many lines</div><div class="line"> | after a pipe symbol</div></pre></td></tr></table></figure>
+<p>Jade真正的能力在于操纵数据并输出数据到HTML中。两个特殊符号<br><code>-</code>：告诉随后的代码应当被执行。<br><code>=</code>：告诉解释器要对代码进行演算、转义和输出。<br>例子：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- var foo =bar;</div><div class="line">p I want to learn to use variables. Foo is #&#123;foo&#125;;</div></pre></td></tr></table></figure>
+<p>编译后就是：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;p&gt;I want to learn to use variables. Foo is bar!&lt;/p&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">- users = [&apos;Sally&apos;,&apos;Joseph&apos;]</div><div class="line">- each user in users</div><div class="line">  p= user</div><div class="line"> </div><div class="line">编译后是</div><div class="line"></div><div class="line">&lt;p&gt;Sally&lt;/p&gt;</div><div class="line">&lt;p&gt;Joseph&lt;/p&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">- for user in users</div><div class="line">  p= user</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">- obj = &#123;first_name:&apos;George&apos;&#125;</div><div class="line">- each val, key in obj</div><div class="line">  li #&#123;key&#125;:#&#123;val&#125;</div><div class="line"></div><div class="line">编译后是</div><div class="line"></div><div class="line">&lt;li&gt;first_name: George&lt;/li&gt;</div></pre></td></tr></table></figure>
+<p><strong>条件</strong>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">- awake = false</div><div class="line">- if (awake)</div><div class="line">  p You are awake!Make coffee!</div><div class="line">- else</div><div class="line">  p You are sleeping</div></pre></td></tr></table></figure>
+<p><strong>内联JavaScript</strong>  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">script</div><div class="line">  alert(&apos;Hello world!&apos;)</div></pre></td></tr></table></figure>
+<p><strong>Mixin</strong>（类似类，可重用）  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mixin users(users)</div><div class="line">    ul</div><div class="line">      each user in users</div><div class="line">        li= user</div><div class="line">  - users = [&apos;Tanya&apos;,&apos;Kim&apos;]</div><div class="line">  mixin users(users)</div></pre></td></tr></table></figure>
+<p>还有页脚<br>在<code>views/includes</code> 添加<code>footer.jade</code><br>将<code>footer</code>文件包含到   <code>index.jade</code>中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">h1 Jade Includes Example</div><div class="line">include includes/footer</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">node.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/09/express试验/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-关于transform属性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -909,6 +999,10 @@ footer {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
              
               <li class="article-tag-list-item">
