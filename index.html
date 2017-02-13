@@ -158,6 +158,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-页面元素位置的获取（参考阮一峰的博客）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/13/页面元素位置的获取（参考阮一峰的博客）/">页面元素位置的获取（参考阮一峰的博客）</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/13/页面元素位置的获取（参考阮一峰的博客）/" class="archive-article-date">
+  	<time datetime="2017-02-13T02:37:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、网页的大小和浏览器窗口的大小"><a href="#一、网页的大小和浏览器窗口的大小" class="headerlink" title="一、网页的大小和浏览器窗口的大小"></a>一、网页的大小和浏览器窗口的大小</h2><p>网页的大小由网页的内容以及样式表来确定。<br>而窗口大小由浏览器的可视区来决定（Viewport）。</p>
+<h2 id="二、获取网页的大小"><a href="#二、获取网页的大小" class="headerlink" title="二、获取网页的大小"></a>二、获取网页的大小</h2><p><img src="http://i260.photobucket.com/albums/ii7/ruanyf/blog/bg2009091402.gif" alt="">  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function getViewport()&#123;</div><div class="line">　　　　if (document.compatMode == &quot;BackCompat&quot;)&#123;</div><div class="line">　　　　　　return &#123;</div><div class="line">　　　　　　　　width: document.body.clientWidth,</div><div class="line">　　　　　　　　height: document.body.clientHeight</div><div class="line">　　　　　　&#125;</div><div class="line">　　　　&#125; else &#123;</div><div class="line">　　　　　　return &#123;</div><div class="line">　　　　　　　　width: document.documentElement.clientWidth,</div><div class="line">　　　　　　　　height: document.documentElement.clientHeight</div><div class="line">　　　　　　&#125;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;</div></pre></td></tr></table></figure>
+<p>1）这个函数必须在页面加载完成后才能运行，否则document对象还没生成，浏览器会报错。</p>
+<p>2）大多数情况下，都是document.documentElement.clientWidth返回正确值。但是，在IE6的quirks模式中，document.body.clientWidth返回正确的值，因此函数中加入了对文档模式的判断。</p>
+<p>3）clientWidth和clientHeight都是只读属性，不能对它们赋值 </p>
+<h2 id="三、获取网页大小的另一种方法"><a href="#三、获取网页大小的另一种方法" class="headerlink" title="三、获取网页大小的另一种方法"></a>三、获取网页大小的另一种方法</h2><h2 id="function-getPagearea"><a href="#function-getPagearea" class="headerlink" title="function getPagearea(){"></a>function getPagearea(){</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">if (document.compatMode == &quot;BackCompat&quot;)&#123;</div><div class="line">　　　　　　return &#123;</div><div class="line">　　　　　　　　width: document.body.scrollWidth,</div><div class="line">　　　　　　　　height: document.body.scrollHeight</div><div class="line">　　　　　　&#125;</div><div class="line">　　　　&#125; else &#123;</div><div class="line">　　　　　　return &#123;</div><div class="line">　　　　　　　　width: document.documentElement.scrollWidth,</div><div class="line">　　　　　　　　height: document.documentElement.scrollHeight</div><div class="line">　　　　　　&#125;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;</div></pre></td></tr></table></figure>
+<p>网页上的每个元素还有scrollHeight和scrollWidth属性，指包含滚动条在内的该元素的视觉面积。</p>
+<p>那么，document对象的scrollHeight和scrollWidth属性就是网页的大小，意思就是滚动条滚过的所有长度和宽度。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function getPagearea()&#123;</div><div class="line">　　　　if (document.compatMode == &quot;BackCompat&quot;)&#123;</div><div class="line">　　　　　　return &#123;</div><div class="line">　　　　　　　　width: Math.max(document.body.scrollWidth,</div><div class="line">　　　　　　　　　　　　　　　　document.body.clientWidth),</div><div class="line">　　　　　　　　height: Math.max(document.body.scrollHeight,</div><div class="line">　　　　　　　　　　　　　　　　document.body.clientHeight)</div><div class="line">　　　　　　&#125;</div><div class="line">　　　　&#125; else &#123;</div><div class="line">　　　　　　return &#123;</div><div class="line">　　　　　　　　width: Math.max(document.documentElement.scrollWidth,</div><div class="line">　　　　　　　　　　　　　　　　document.documentElement.clientWidth),</div><div class="line">　　　　　　　　height: Math.max(document.documentElement.scrollHeight,</div><div class="line">　　　　　　　　　　　　　　　　document.documentElement.clientHeight)</div><div class="line">　　　　　　&#125;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;</div></pre></td></tr></table></figure>
+<p>但是，这个函数有一个问题。如果网页内容能够在浏览器窗口中全部显示，不出现滚动条，那么网页的clientWidth和scrollWidth应该相等。但是实际上，不同浏览器有不同的处理，这两个值未必相等。</p>
+<h2 id="四、获取网页元素的绝对位置"><a href="#四、获取网页元素的绝对位置" class="headerlink" title="四、获取网页元素的绝对位置"></a>四、获取网页元素的绝对位置</h2><p><img src="http://i260.photobucket.com/albums/ii7/ruanyf/blog/bg2009091403.gif" alt=""><br>下面两个函数可以用来获取绝对位置的横坐标和纵坐标。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">function getElementLeft(element)&#123;</div><div class="line">　　　　var actualLeft = element.offsetLeft;</div><div class="line">　　　　var current = element.offsetParent;</div><div class="line"></div><div class="line">　　　　while (current !== null)&#123;</div><div class="line">　　　　　　actualLeft += current.offsetLeft;</div><div class="line">　　　　　　current = current.offsetParent;</div><div class="line">　　　　&#125;</div><div class="line"></div><div class="line">　　　　return actualLeft;</div><div class="line">　　&#125;</div><div class="line"></div><div class="line">　　function getElementTop(element)&#123;</div><div class="line">　　　　var actualTop = element.offsetTop;</div><div class="line">　　　　var current = element.offsetParent;</div><div class="line"></div><div class="line">　　　　while (current !== null)&#123;</div><div class="line">　　　　　　actualTop += current.offsetTop;</div><div class="line">　　　　　　current = current.offsetParent;</div><div class="line">　　　　&#125;</div><div class="line"></div><div class="line">　　　　return actualTop;</div><div class="line">　　&#125;</div></pre></td></tr></table></figure>
+<p>由于在表格和iframe中，offsetParent对象未必等于父容器，所以上面的函数对于表格和iframe中的元素不适用。</p>
+<h2 id="五、获取网页元素的相对位置"><a href="#五、获取网页元素的相对位置" class="headerlink" title="五、获取网页元素的相对位置"></a>五、获取网页元素的相对位置</h2><p><img src="http://i260.photobucket.com/albums/ii7/ruanyf/blog/bg2009091404.gif" alt=""><br>网页元素的相对位置，指该元素左上角相对于浏览器窗口左上角的坐标。</p>
+<p>有了绝对位置以后，获得相对位置就很容易了，只要将绝对坐标减去页面的滚动条滚动的距离就可以了。滚动条滚动的垂直距离，是document对象的scrollTop属性；滚动条滚动的水平距离是document对象的scrollLeft属性。</p>
+<h2 id="六、获取元素位置的快速方法"><a href="#六、获取元素位置的快速方法" class="headerlink" title="六、获取元素位置的快速方法"></a>六、获取元素位置的快速方法</h2><p>getBoundingClientRect()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var X= this.getBoundingClientRect().left;</div><div class="line"></div><div class="line">　　var Y =this.getBoundingClientRect().top;</div></pre></td></tr></table></figure>
+<p>七、jQuery下的位置获取方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">alert($(window).height()); //浏览器当前窗口可视区域高度</div><div class="line"></div><div class="line">alert($(document).height()); //浏览器当前窗口文档的高度</div><div class="line"></div><div class="line">alert($(document.body).height());//浏览器当前窗口文档body的高度</div><div class="line"></div><div class="line">alert($(document.body).outerHeight(true));//浏览器当前窗口文档body的总高度 包括border padding margin</div><div class="line"></div><div class="line">alert($(window).width()); //浏览器当前窗口可视区域宽度</div><div class="line"></div><div class="line">alert($(document).width());//浏览器当前窗口文档对象宽度</div><div class="line"></div><div class="line">alert($(document.body).width());//浏览器当前窗口文档body的高度</div><div class="line"></div><div class="line">alert($(document.body).outerWidth(true));//浏览器当前窗口文档body的总宽度 包括border padding margin</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/13/页面元素位置的获取（参考阮一峰的博客）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-express试验" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1002,15 +1083,19 @@ footer {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">搭建个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
             
             <div class="clearfix"></div>

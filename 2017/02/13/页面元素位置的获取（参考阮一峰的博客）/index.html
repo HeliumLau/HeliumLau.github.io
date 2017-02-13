@@ -6,17 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://HeliumLau.github.io">
-  <title>Archives: 2017 | Helium Lau&#39;s secret garden</title>
+  <title>页面元素位置的获取（参考阮一峰的博客） | Helium Lau&#39;s secret garden</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="graduated from TianJin University in 2015. Used to work as a QC(quality control) engineer in shipyard. Now I want to explore a new world which is more interesting.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Helium Lau's secret garden">
-<meta property="og:url" content="http://HeliumLau.github.io/archives/2017/index.html">
+  <meta name="description" content="一、网页的大小和浏览器窗口的大小网页的大小由网页的内容以及样式表来确定。而窗口大小由浏览器的可视区来决定（Viewport）。
+二、获取网页的大小  
+12345678910111213function getViewport()&amp;#123;　　　　if (document.compatMode == &amp;quot;BackCompat&amp;quot;)&amp;#123;　　　　　　return &amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="页面元素位置的获取（参考阮一峰的博客）">
+<meta property="og:url" content="http://HeliumLau.github.io/2017/02/13/页面元素位置的获取（参考阮一峰的博客）/index.html">
 <meta property="og:site_name" content="Helium Lau's secret garden">
-<meta property="og:description" content="graduated from TianJin University in 2015. Used to work as a QC(quality control) engineer in shipyard. Now I want to explore a new world which is more interesting.">
+<meta property="og:description" content="一、网页的大小和浏览器窗口的大小网页的大小由网页的内容以及样式表来确定。而窗口大小由浏览器的可视区来决定（Viewport）。
+二、获取网页的大小  
+12345678910111213function getViewport()&amp;#123;　　　　if (document.compatMode == &amp;quot;BackCompat&amp;quot;)&amp;#123;　　　　　　return &amp;#123;">
+<meta property="og:image" content="http://i260.photobucket.com/albums/ii7/ruanyf/blog/bg2009091402.gif">
+<meta property="og:image" content="http://i260.photobucket.com/albums/ii7/ruanyf/blog/bg2009091403.gif">
+<meta property="og:image" content="http://i260.photobucket.com/albums/ii7/ruanyf/blog/bg2009091404.gif">
+<meta property="og:updated_time" content="2017-02-13T02:38:33.419Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Helium Lau's secret garden">
-<meta name="twitter:description" content="graduated from TianJin University in 2015. Used to work as a QC(quality control) engineer in shipyard. Now I want to explore a new world which is more interesting.">
+<meta name="twitter:title" content="页面元素位置的获取（参考阮一峰的博客）">
+<meta name="twitter:description" content="一、网页的大小和浏览器窗口的大小网页的大小由网页的内容以及样式表来确定。而窗口大小由浏览器的可视区来决定（Viewport）。
+二、获取网页的大小  
+12345678910111213function getViewport()&amp;#123;　　　　if (document.compatMode == &amp;quot;BackCompat&amp;quot;)&amp;#123;　　　　　　return &amp;#123;">
+<meta name="twitter:image" content="http://i260.photobucket.com/albums/ii7/ruanyf/blog/bg2009091402.gif">
   
     <link rel="alternative" href="/atom.xml" title="Helium Lau&#39;s secret garden" type="application/atom+xml">
   
@@ -156,36 +167,75 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-页面元素位置的获取（参考阮一峰的博客）" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/13/页面元素位置的获取（参考阮一峰的博客）/" class="archive-article-date">
-  	<time datetime="2017-02-13T02:37:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-13</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/13/页面元素位置的获取（参考阮一峰的博客）/">页面元素位置的获取（参考阮一峰的博客）</a>
+    <h1 class="article-title" itemprop="name">
+      页面元素位置的获取（参考阮一峰的博客）
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/02/13/页面元素位置的获取（参考阮一峰的博客）/" class="archive-article-date">
+  	<time datetime="2017-02-13T02:37:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、网页的大小和浏览器窗口的大小"><a href="#一、网页的大小和浏览器窗口的大小" class="headerlink" title="一、网页的大小和浏览器窗口的大小"></a>一、网页的大小和浏览器窗口的大小</h2><p>网页的大小由网页的内容以及样式表来确定。<br>而窗口大小由浏览器的可视区来决定（Viewport）。</p>
+<h2 id="二、获取网页的大小"><a href="#二、获取网页的大小" class="headerlink" title="二、获取网页的大小"></a>二、获取网页的大小</h2><p><img src="http://i260.photobucket.com/albums/ii7/ruanyf/blog/bg2009091402.gif" alt="">  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function getViewport()&#123;</div><div class="line">　　　　if (document.compatMode == &quot;BackCompat&quot;)&#123;</div><div class="line">　　　　　　return &#123;</div><div class="line">　　　　　　　　width: document.body.clientWidth,</div><div class="line">　　　　　　　　height: document.body.clientHeight</div><div class="line">　　　　　　&#125;</div><div class="line">　　　　&#125; else &#123;</div><div class="line">　　　　　　return &#123;</div><div class="line">　　　　　　　　width: document.documentElement.clientWidth,</div><div class="line">　　　　　　　　height: document.documentElement.clientHeight</div><div class="line">　　　　　　&#125;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;</div></pre></td></tr></table></figure>
+<p>1）这个函数必须在页面加载完成后才能运行，否则document对象还没生成，浏览器会报错。</p>
+<p>2）大多数情况下，都是document.documentElement.clientWidth返回正确值。但是，在IE6的quirks模式中，document.body.clientWidth返回正确的值，因此函数中加入了对文档模式的判断。</p>
+<p>3）clientWidth和clientHeight都是只读属性，不能对它们赋值 </p>
+<h2 id="三、获取网页大小的另一种方法"><a href="#三、获取网页大小的另一种方法" class="headerlink" title="三、获取网页大小的另一种方法"></a>三、获取网页大小的另一种方法</h2><h2 id="function-getPagearea"><a href="#function-getPagearea" class="headerlink" title="function getPagearea(){"></a>function getPagearea(){</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">if (document.compatMode == &quot;BackCompat&quot;)&#123;</div><div class="line">　　　　　　return &#123;</div><div class="line">　　　　　　　　width: document.body.scrollWidth,</div><div class="line">　　　　　　　　height: document.body.scrollHeight</div><div class="line">　　　　　　&#125;</div><div class="line">　　　　&#125; else &#123;</div><div class="line">　　　　　　return &#123;</div><div class="line">　　　　　　　　width: document.documentElement.scrollWidth,</div><div class="line">　　　　　　　　height: document.documentElement.scrollHeight</div><div class="line">　　　　　　&#125;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;</div></pre></td></tr></table></figure>
+<p>网页上的每个元素还有scrollHeight和scrollWidth属性，指包含滚动条在内的该元素的视觉面积。</p>
+<p>那么，document对象的scrollHeight和scrollWidth属性就是网页的大小，意思就是滚动条滚过的所有长度和宽度。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function getPagearea()&#123;</div><div class="line">　　　　if (document.compatMode == &quot;BackCompat&quot;)&#123;</div><div class="line">　　　　　　return &#123;</div><div class="line">　　　　　　　　width: Math.max(document.body.scrollWidth,</div><div class="line">　　　　　　　　　　　　　　　　document.body.clientWidth),</div><div class="line">　　　　　　　　height: Math.max(document.body.scrollHeight,</div><div class="line">　　　　　　　　　　　　　　　　document.body.clientHeight)</div><div class="line">　　　　　　&#125;</div><div class="line">　　　　&#125; else &#123;</div><div class="line">　　　　　　return &#123;</div><div class="line">　　　　　　　　width: Math.max(document.documentElement.scrollWidth,</div><div class="line">　　　　　　　　　　　　　　　　document.documentElement.clientWidth),</div><div class="line">　　　　　　　　height: Math.max(document.documentElement.scrollHeight,</div><div class="line">　　　　　　　　　　　　　　　　document.documentElement.clientHeight)</div><div class="line">　　　　　　&#125;</div><div class="line">　　　　&#125;</div><div class="line">　　&#125;</div></pre></td></tr></table></figure>
+<p>但是，这个函数有一个问题。如果网页内容能够在浏览器窗口中全部显示，不出现滚动条，那么网页的clientWidth和scrollWidth应该相等。但是实际上，不同浏览器有不同的处理，这两个值未必相等。</p>
+<h2 id="四、获取网页元素的绝对位置"><a href="#四、获取网页元素的绝对位置" class="headerlink" title="四、获取网页元素的绝对位置"></a>四、获取网页元素的绝对位置</h2><p><img src="http://i260.photobucket.com/albums/ii7/ruanyf/blog/bg2009091403.gif" alt=""><br>下面两个函数可以用来获取绝对位置的横坐标和纵坐标。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">function getElementLeft(element)&#123;</div><div class="line">　　　　var actualLeft = element.offsetLeft;</div><div class="line">　　　　var current = element.offsetParent;</div><div class="line"></div><div class="line">　　　　while (current !== null)&#123;</div><div class="line">　　　　　　actualLeft += current.offsetLeft;</div><div class="line">　　　　　　current = current.offsetParent;</div><div class="line">　　　　&#125;</div><div class="line"></div><div class="line">　　　　return actualLeft;</div><div class="line">　　&#125;</div><div class="line"></div><div class="line">　　function getElementTop(element)&#123;</div><div class="line">　　　　var actualTop = element.offsetTop;</div><div class="line">　　　　var current = element.offsetParent;</div><div class="line"></div><div class="line">　　　　while (current !== null)&#123;</div><div class="line">　　　　　　actualTop += current.offsetTop;</div><div class="line">　　　　　　current = current.offsetParent;</div><div class="line">　　　　&#125;</div><div class="line"></div><div class="line">　　　　return actualTop;</div><div class="line">　　&#125;</div></pre></td></tr></table></figure>
+<p>由于在表格和iframe中，offsetParent对象未必等于父容器，所以上面的函数对于表格和iframe中的元素不适用。</p>
+<h2 id="五、获取网页元素的相对位置"><a href="#五、获取网页元素的相对位置" class="headerlink" title="五、获取网页元素的相对位置"></a>五、获取网页元素的相对位置</h2><p><img src="http://i260.photobucket.com/albums/ii7/ruanyf/blog/bg2009091404.gif" alt=""><br>网页元素的相对位置，指该元素左上角相对于浏览器窗口左上角的坐标。</p>
+<p>有了绝对位置以后，获得相对位置就很容易了，只要将绝对坐标减去页面的滚动条滚动的距离就可以了。滚动条滚动的垂直距离，是document对象的scrollTop属性；滚动条滚动的水平距离是document对象的scrollLeft属性。</p>
+<h2 id="六、获取元素位置的快速方法"><a href="#六、获取元素位置的快速方法" class="headerlink" title="六、获取元素位置的快速方法"></a>六、获取元素位置的快速方法</h2><p>getBoundingClientRect()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var X= this.getBoundingClientRect().left;</div><div class="line"></div><div class="line">　　var Y =this.getBoundingClientRect().top;</div></pre></td></tr></table></figure>
+<p>七、jQuery下的位置获取方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">alert($(window).height()); //浏览器当前窗口可视区域高度</div><div class="line"></div><div class="line">alert($(document).height()); //浏览器当前窗口文档的高度</div><div class="line"></div><div class="line">alert($(document.body).height());//浏览器当前窗口文档body的高度</div><div class="line"></div><div class="line">alert($(document.body).outerHeight(true));//浏览器当前窗口文档body的总高度 包括border padding margin</div><div class="line"></div><div class="line">alert($(window).width()); //浏览器当前窗口可视区域宽度</div><div class="line"></div><div class="line">alert($(document).width());//浏览器当前窗口文档对象宽度</div><div class="line"></div><div class="line">alert($(document.body).width());//浏览器当前窗口文档body的高度</div><div class="line"></div><div class="line">alert($(document.body).outerWidth(true));//浏览器当前窗口文档body的总宽度 包括border padding margin</div></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -197,236 +247,88 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://HeliumLau.github.io/2017/02/13/页面元素位置的获取（参考阮一峰的博客）/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/09/express试验/" class="archive-article-date">
-  	<time datetime="2017-02-09T05:41:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/09/express试验/">express试验</a>
-    </h1>
+  
+    <a href="/2017/02/09/express试验/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">express试验</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/09/关于transform属性/" class="archive-article-date">
-  	<time datetime="2017-02-09T03:11:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/09/关于transform属性/">关于transform属性</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/07/css字体导入/" class="archive-article-date">
-  	<time datetime="2017-02-07T07:10:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/07/css字体导入/">CSS字体的导入</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/06/基于github搭建hexo博客/" class="archive-article-date">
-  	<time datetime="2017-02-06T13:36:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/06/基于github搭建hexo博客/">基于github搭建hexo博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">搭建个人博客</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/06/fortest/" class="archive-article-date">
-  	<time datetime="2017-02-06T07:10:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/06/fortest/">Flex Layout(转载自阮一峰的博客)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">CSS布局</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/06/hello-world/" class="archive-article-date">
-  	<time datetime="2017-02-06T06:26:35.163Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/06/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -449,8 +351,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
