@@ -158,6 +158,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-犀牛经-脚本化CSS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/17/犀牛经-脚本化CSS/">犀牛经-脚本化CSS</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/17/犀牛经-脚本化CSS/" class="archive-article-date">
+  	<time datetime="2017-02-17T02:04:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="脚本化CSS"><a href="#脚本化CSS" class="headerlink" title="脚本化CSS"></a>脚本化CSS</h2><p><strong>层叠来自</strong>于：<br>1.Web浏览器的默认样式表<br>2.文档的样式表<br>3.每个独立的HTML元素的style属性<br>从上到下优先级提升。  </p>
+<p><strong>非标准属</strong>性，即浏览器厂商前缀：<br>FF -moz-<br>Chrome -webkit-<br>IE -ms-  </p>
+<p>关于<strong>Z-index</strong>的使用需要注意：<br>z-index只对兄弟元素，即同一个容器下的子元素应用堆叠效果。  </p>
+<p>对于<strong>新属性text-shadow</strong>，在不支持其属性的浏览器中，同样可以通过设置定位来实现阴影效果。比如：  </p>
+<pre><code>&lt;span style=&quot;position:relative&quot;&gt;
+    XXXX
+    &lt;span style=&quot;position: absolute&quot;&gt;
+        XXXX
+    &lt;/span&gt;
+&lt;/span&gt;
+</code></pre><p>关于<strong>透明度opacity</strong><br>在IE中用法 filter： alpha（opacity=75）</p>
+<p><strong>CSS动画</strong><br>通过setTimeout以及setInterval来修改元素内联样式产生动画。</p>
+<p><strong>查询计算出的样式</strong><br>window.getComputedStyle(element, null);  </p>
+<p><strong>查询、插入与删除样式表规则</strong><br>document.styleSheets[0].cssRules[0];(IE属性名是rules)<br>styleSheets[0]还有insertRule（）和deleteRule（）属性。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">犀牛经-读书笔记</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/17/犀牛经-脚本化CSS/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-页面元素位置的获取（参考阮一峰的博客）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1087,15 +1162,19 @@ footer {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">搭建个人博客</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+                <a href="javascript:void(0)" class="js-tag color4">犀牛经-读书笔记</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
             
             <div class="clearfix"></div>
