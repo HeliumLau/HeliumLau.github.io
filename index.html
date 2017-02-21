@@ -158,6 +158,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-文档元信息meta标签" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/21/文档元信息meta标签/">文档元信息meta标签</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/21/文档元信息meta标签/" class="archive-article-date">
+  	<time datetime="2017-02-21T08:22:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="定义和用法"><a href="#定义和用法" class="headerlink" title="定义和用法"></a>定义和用法</h2><p><meta>标签位于文档头部，不包含任何内容，提供有关页面的元信息，例如作者、日期和时间、网页描述、关键词以及页面刷新等。  </p>
+<h2 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h2><p>Meta标签可分为两大部分：HTTP-EQUIV和NAME变量。<br>实例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=gb2312&quot;&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">1、&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=gb_2312-80&quot;&gt;和&lt;meta http-equiv=&quot;Content-Language&quot; content=&quot;zh-CN&quot;&gt;用以说明主页制作所使用的文字以及语言；又如英文是ISO-8859-1字符集，还有BIG5、utf-8、shift-Jis、Euc、Koi8-2等字符集；</div><div class="line">2、&lt;meta http-equiv=&quot;Refresh&quot; content=&quot;n;url=http://yourlink&quot;&gt;定时让网页在指定的时间n内，跳转到你的页面；</div><div class="line">3、&lt;meta http-equiv=&quot;Expires&quot; content=&quot;Mon,12 May 2001 00:20:00 GMT&quot;&gt;可以用于设定网页的到期时间，一旦过期则必须到服务器上重新调用。需要注意的是必须使用GMT时间格式；</div><div class="line">4、&lt;meta http-equiv=&quot;Pragma&quot; content=&quot;no-cache&quot;&gt;是用于设定禁止浏览器从本地机的缓存中调阅页面内容，设定后一旦离开网页就无法从Cache中再调出；</div><div class="line">5、&lt;meta http-equiv=&quot;set-cookie&quot; content=&quot;Mon,12 May 2001 00:20:00 GMT&quot;&gt;cookie设定，如果网页过期，存盘的cookie将被删除。需要注意的也是必须使用GMT时间格式；</div><div class="line">6、&lt;meta http-equiv=&quot;Pics-label&quot; content=&quot;&quot;&gt;网页等级评定，在IE的internet选项中有一项内容设置，可以防止浏览一些受限制的网站，而网站的限制级别就是通过meta属性来设置的；</div><div class="line">7、&lt;meta http-equiv=&quot;windows-Target&quot; content=&quot;_top&quot;&gt;强制页面在当前窗口中以独立页面显示，可以防止自己的网页被别人当作一个frame页调用；</div><div class="line">8、&lt;meta http-equiv=&quot;Page-Enter&quot; content=&quot;revealTrans（duration=10,transition= 50）&quot;&gt;和&lt;meta http-equiv=&quot;Page-Exit&quot; content=&quot;revealTrans（duration=20，transition=6）&quot;&gt;设定进入和离开页面时的特殊效果，这个功能即FrontPage中的&quot;格式/网页过渡&quot;，不过所加的页面不能够是一个frame页面。</div></pre></td></tr></table></figure>
+<p>自己描述的话就是  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;&quot; content=&quot;description&quot;&gt;</div></pre></td></tr></table></figure>
+<p>有个重定向的设定：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta http-equiv=&quot;Refresh&quot; content=&quot;5;url=http://www.w3school.com.cn&quot; /&gt;</div></pre></td></tr></table></figure></p>
+<p>有个设置窗口大小与设备大小一致的<meta>设定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no&quot;&gt;</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Html</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/21/文档元信息meta标签/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-犀牛经-脚本化CSS" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1158,15 +1228,19 @@ footer {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">node.js</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">搭建个人博客</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Html</a>
               </li>
              
               <li class="article-tag-list-item">
