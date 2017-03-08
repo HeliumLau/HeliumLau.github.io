@@ -6,17 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://HeliumLau.github.io">
-  <title>Archives: 2017/2 | Helium Lau&#39;s secret garden</title>
+  <title>gulp构建的5个函数 | Helium Lau&#39;s secret garden</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="graduated from TianJin University in 2015. Used to work as a QC(quality control) engineer in shipyard. Now I want to explore a new world which is more interesting.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Helium Lau's secret garden">
-<meta property="og:url" content="http://HeliumLau.github.io/archives/2017/02/page/2/index.html">
+  <meta name="description" content="转载于http://blog.csdn.net/kiwi_coder/article/details/36422385gulp
+gulp是一个nodejs的streaming构建工具，所谓的streaming大致意思就是把构建流程想成一个个链接的管道（pipe）。
+为什么要这样做呢？
+要解释原因，就不得不提到unix。unix本身只提供了数量相对较少的命令，但是你可以命令的组合完成很强大的功能。命">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gulp构建的5个函数">
+<meta property="og:url" content="http://HeliumLau.github.io/2017/03/08/gulp构建的5个函数/index.html">
 <meta property="og:site_name" content="Helium Lau's secret garden">
-<meta property="og:description" content="graduated from TianJin University in 2015. Used to work as a QC(quality control) engineer in shipyard. Now I want to explore a new world which is more interesting.">
+<meta property="og:description" content="转载于http://blog.csdn.net/kiwi_coder/article/details/36422385gulp
+gulp是一个nodejs的streaming构建工具，所谓的streaming大致意思就是把构建流程想成一个个链接的管道（pipe）。
+为什么要这样做呢？
+要解释原因，就不得不提到unix。unix本身只提供了数量相对较少的命令，但是你可以命令的组合完成很强大的功能。命">
+<meta property="og:updated_time" content="2017-03-08T02:19:24.688Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Helium Lau's secret garden">
-<meta name="twitter:description" content="graduated from TianJin University in 2015. Used to work as a QC(quality control) engineer in shipyard. Now I want to explore a new world which is more interesting.">
+<meta name="twitter:title" content="gulp构建的5个函数">
+<meta name="twitter:description" content="转载于http://blog.csdn.net/kiwi_coder/article/details/36422385gulp
+gulp是一个nodejs的streaming构建工具，所谓的streaming大致意思就是把构建流程想成一个个链接的管道（pipe）。
+为什么要这样做呢？
+要解释原因，就不得不提到unix。unix本身只提供了数量相对较少的命令，但是你可以命令的组合完成很强大的功能。命">
   
     <link rel="alternative" href="/atom.xml" title="Helium Lau&#39;s secret garden" type="application/atom+xml">
   
@@ -156,53 +166,199 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-gulp构建的5个函数" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/06/hello-world/" class="archive-article-date">
-  	<time datetime="2017-02-06T06:26:35.163Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/06/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      gulp构建的5个函数
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
+        
+        <a href="/2017/03/08/gulp构建的5个函数/" class="archive-article-date">
+  	<time datetime="2017-03-08T02:18:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>转载于<a href="http://blog.csdn.net/kiwi_coder/article/details/36422385" target="_blank" rel="external">http://blog.csdn.net/kiwi_coder/article/details/36422385</a><br>gulp</p>
+<p>gulp是一个nodejs的streaming构建工具，所谓的streaming大致意思就是把构建流程想成一个个链接的管道（pipe）。</p>
+<p>为什么要这样做呢？</p>
+<p>要解释原因，就不得不提到unix。unix本身只提供了数量相对较少的命令，但是你可以命令的组合完成很强大的功能。命令和命令之间的衔接通常就用的是pipe。</p>
+<p>类似，使用gulp，你仅仅只需要记住5个命令。这5个命令就是gulp提供给我们的一套streaming构建的架子，也就相当于提供了unix中的pipe功能。至于说pipe中每个命令的功能，则可以使用现有的plugin或者自定义完成。</p>
+<p>安装gulp</p>
+<p>如果npm版本比较老，可能会遇到安装gulp失败的情况</p>
+<p>更新/安装npm：</p>
+<p>curl <a href="https://www.npmjs.org/install.sh" target="_blank" rel="external">https://www.npmjs.org/install.sh</a> | sudo sh</p>
+<p>安装npm:</p>
+<p>npm install -g gulp</p>
+<p>npm install–save-dev gulp</p>
+<p>安装完成以后，可以用gulp -v试一试是否正确</p>
+<p>[20:29:16] CLI version 3.8.5<br>[20:29:16] Local version 3.8.5</p>
+<p>一个最简单的gulp脚本</p>
+<p>gulpfile.js</p>
+<hr>
+<p>var gulp = require(‘gulp’)</p>
+<p>gulp.task(‘default’, function() {<br>   console.log(‘this is the default task’)<br>})</p>
+<p>运行：gulp</p>
+<p>[20:29:02] Starting ‘default’…<br>this is the default task<br>[20:29:02] Finished ‘default’ after 74 μs</p>
+<p>gulp和大多数的构建工具类似，都是由task组成的，上面的例子中，default是task名字，也表示是默认的task。也可以用gulp default运行，执行的是同一task。</p>
+<p>一个第二简单的gulp脚本(src, pipe)</p>
+<p>安装jasmine插件</p>
+<p>npm install –save-dev gulp-jasmine</p>
+<p>gulpfile.js</p>
+<hr>
+<p>var gulp = require(‘gulp’);<br>var jasmine = require(‘gulp-jasmine’);</p>
+<p>gulp.task(‘default’, function () {<br>    return gulp.src(‘spec/google.spec.js’)<br>        .pipe(jasmine());<br>});</p>
+<p>安装superagent方便测试</p>
+<p>spec/google.spec.js</p>
+<hr>
+<p>var superagent = require(‘superagent’)</p>
+<p>describe (‘google’, function() {<br>   it(“should return the google homepage”, function(done) {<br>      superagent.get(‘<a href="http://www.google.com/" target="_blank" rel="external">http://www.google.com/</a>‘)<br>         .end(function(e, res) {<br>            expect(e).toBe(null)<br>            expect(res.status).toBe(200)<br>            done();<br>         })<br>   })<br>})</p>
+<p>运行测试</p>
+<p>[21:01:07] Starting ‘default’…<br>[21:01:07] Finished ‘default’ after 79 ms<br>.<br>Finished in 0.41 seconds<br>1 test, 2 assertions, 0 failures</p>
+<p>gulp有比较多的插件，比如上面用到的gulp-jasmine就是其中的一个。</p>
+<p> gulp.src(‘spec/google.spec.js’)<br>        .pipe(jasmine());</p>
+<p>有意思的东西来了，什么是src和pipe？</p>
+<p>我们先看一个unix命令：</p>
+<p> cat gulpfile.js | wc -l</p>
+<p>这是两个独立的命令，cat gulpfile.js用来获取gulpfile.js的文件内容，wc -l用来统计文件中的行数，他们中间用“|”相连。把cat gulpfile.js的输出作为wc -l的输入。这是再常见不过的unix命令</p>
+<p>gulp中吸取了这样的想法，上面gulp命令可以想作：</p>
+<p> ‘spec/google.spec.js’ | jasmine()</p>
+<p>这样应该就非常好理解了吧。</p>
+<p>你仅仅需要知道的5个gulp命令</p>
+<p>gulp.task(name, fn)这个你应经见过了</p>
+<p>gulp.run(tasks…)尽可能多的并行运行多个task</p>
+<p>gulp.watch(glob, fn)当glob内容发生改变时，执行fn</p>
+<p>gulp.src(glob)返回一个可读的stream</p>
+<p>gulp.dest(glob)返回一个可写的stream</p>
 
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">gulp</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://HeliumLau.github.io/2017/03/08/gulp构建的5个函数/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/02/23/2月23日有感/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">2月23日有感</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2017/02/">&laquo; Prev</a><a class="page-number" href="/archives/2017/02/">1</a><span class="page-number current">2</span>
-    </nav>
-  
+
 
 
           </div>
@@ -225,8 +381,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

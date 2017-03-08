@@ -158,6 +158,118 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-gulp构建的5个函数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/08/gulp构建的5个函数/">gulp构建的5个函数</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/08/gulp构建的5个函数/" class="archive-article-date">
+  	<time datetime="2017-03-08T02:18:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>转载于<a href="http://blog.csdn.net/kiwi_coder/article/details/36422385" target="_blank" rel="external">http://blog.csdn.net/kiwi_coder/article/details/36422385</a><br>gulp</p>
+<p>gulp是一个nodejs的streaming构建工具，所谓的streaming大致意思就是把构建流程想成一个个链接的管道（pipe）。</p>
+<p>为什么要这样做呢？</p>
+<p>要解释原因，就不得不提到unix。unix本身只提供了数量相对较少的命令，但是你可以命令的组合完成很强大的功能。命令和命令之间的衔接通常就用的是pipe。</p>
+<p>类似，使用gulp，你仅仅只需要记住5个命令。这5个命令就是gulp提供给我们的一套streaming构建的架子，也就相当于提供了unix中的pipe功能。至于说pipe中每个命令的功能，则可以使用现有的plugin或者自定义完成。</p>
+<p>安装gulp</p>
+<p>如果npm版本比较老，可能会遇到安装gulp失败的情况</p>
+<p>更新/安装npm：</p>
+<p>curl <a href="https://www.npmjs.org/install.sh" target="_blank" rel="external">https://www.npmjs.org/install.sh</a> | sudo sh</p>
+<p>安装npm:</p>
+<p>npm install -g gulp</p>
+<p>npm install–save-dev gulp</p>
+<p>安装完成以后，可以用gulp -v试一试是否正确</p>
+<p>[20:29:16] CLI version 3.8.5<br>[20:29:16] Local version 3.8.5</p>
+<p>一个最简单的gulp脚本</p>
+<p>gulpfile.js</p>
+<hr>
+<p>var gulp = require(‘gulp’)</p>
+<p>gulp.task(‘default’, function() {<br>   console.log(‘this is the default task’)<br>})</p>
+<p>运行：gulp</p>
+<p>[20:29:02] Starting ‘default’…<br>this is the default task<br>[20:29:02] Finished ‘default’ after 74 μs</p>
+<p>gulp和大多数的构建工具类似，都是由task组成的，上面的例子中，default是task名字，也表示是默认的task。也可以用gulp default运行，执行的是同一task。</p>
+<p>一个第二简单的gulp脚本(src, pipe)</p>
+<p>安装jasmine插件</p>
+<p>npm install –save-dev gulp-jasmine</p>
+<p>gulpfile.js</p>
+<hr>
+<p>var gulp = require(‘gulp’);<br>var jasmine = require(‘gulp-jasmine’);</p>
+<p>gulp.task(‘default’, function () {<br>    return gulp.src(‘spec/google.spec.js’)<br>        .pipe(jasmine());<br>});</p>
+<p>安装superagent方便测试</p>
+<p>spec/google.spec.js</p>
+<hr>
+<p>var superagent = require(‘superagent’)</p>
+<p>describe (‘google’, function() {<br>   it(“should return the google homepage”, function(done) {<br>      superagent.get(‘<a href="http://www.google.com/" target="_blank" rel="external">http://www.google.com/</a>‘)<br>         .end(function(e, res) {<br>            expect(e).toBe(null)<br>            expect(res.status).toBe(200)<br>            done();<br>         })<br>   })<br>})</p>
+<p>运行测试</p>
+<p>[21:01:07] Starting ‘default’…<br>[21:01:07] Finished ‘default’ after 79 ms<br>.<br>Finished in 0.41 seconds<br>1 test, 2 assertions, 0 failures</p>
+<p>gulp有比较多的插件，比如上面用到的gulp-jasmine就是其中的一个。</p>
+<p> gulp.src(‘spec/google.spec.js’)<br>        .pipe(jasmine());</p>
+<p>有意思的东西来了，什么是src和pipe？</p>
+<p>我们先看一个unix命令：</p>
+<p> cat gulpfile.js | wc -l</p>
+<p>这是两个独立的命令，cat gulpfile.js用来获取gulpfile.js的文件内容，wc -l用来统计文件中的行数，他们中间用“|”相连。把cat gulpfile.js的输出作为wc -l的输入。这是再常见不过的unix命令</p>
+<p>gulp中吸取了这样的想法，上面gulp命令可以想作：</p>
+<p> ‘spec/google.spec.js’ | jasmine()</p>
+<p>这样应该就非常好理解了吧。</p>
+<p>你仅仅需要知道的5个gulp命令</p>
+<p>gulp.task(name, fn)这个你应经见过了</p>
+<p>gulp.run(tasks…)尽可能多的并行运行多个task</p>
+<p>gulp.watch(glob, fn)当glob内容发生改变时，执行fn</p>
+<p>gulp.src(glob)返回一个可读的stream</p>
+<p>gulp.dest(glob)返回一个可写的stream</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">gulp</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/08/gulp构建的5个函数/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-2月23日有感" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -853,363 +965,6 @@ p {
 
 
   
-    <article id="post-fortest" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/06/fortest/">Flex Layout(转载自阮一峰的博客)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/02/06/fortest/" class="archive-article-date">
-  	<time datetime="2017-02-06T07:10:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一、骰子的布局"><a href="#一、骰子的布局" class="headerlink" title="一、骰子的布局"></a>一、骰子的布局</h2><p>骰子的一面，最多可以放置9个点。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071328.png" alt=""><br>下面，就来看看Flex如何实现，从1个点到9个点的布局。你可以到codepen查看Demo。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071329.png" alt=""><br>如果不加说明，本节的HTML模板一律如下。</p>
-<pre><code>&lt;div class=&quot;box&quot;&gt;
-  &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-&lt;/div&gt;
-</code></pre><p>上面代码中，div元素（代表骰子的一个面）是Flex容器，span元素（代表一个点）是Flex项目。如果有多个项目，就要添加多个span元素，以此类推。  </p>
-<h3 id="1-1-单项目"><a href="#1-1-单项目" class="headerlink" title="1.1 单项目"></a>1.1 单项目</h3><p>首先，只有左上角1个点的情况。Flex布局默认就是首行左对齐，所以一行代码就够了。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071301.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-}
-</code></pre><p>设置项目的对齐方式，就能实现居中对齐和右对齐。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071302.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  justify-content: center;
-}
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071303.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  justify-content: flex-end;
-}
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071304.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  align-items: center;
-}
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071306.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-}
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071307.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-</code></pre><h3 id="1-2-双项目"><a href="#1-2-双项目" class="headerlink" title="1.2 双项目"></a>1.2 双项目</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071308.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  justify-content: space-between;
-}
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071309.png" alt="">   </p>
-<pre><code>.box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071310.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}  
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071311.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-end;
-}
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071312.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-}
-
-.item:nth-child(2) {
-  align-self: center;
-}  
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071313.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  justify-content: space-between;
-}
-
-.item:nth-child(2) {
-  align-self: flex-end;
-}
-</code></pre><h3 id="1-3-三项目"><a href="#1-3-三项目" class="headerlink" title="1.3 三项目"></a>1.3 三项目</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071314.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-}
-
-.item:nth-child(2) {
-  align-self: center;
-}
-
-.item:nth-child(3) {
-  align-self: flex-end;
-}
-</code></pre><h3 id="1-4-四项目"><a href="#1-4-四项目" class="headerlink" title="1.4 四项目"></a>1.4 四项目</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071315.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-content: space-between;
-}
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071316.png" alt=""><br>HTML代码如下。</p>
-<pre><code>&lt;div class=&quot;box&quot;&gt;
-  &lt;div class=&quot;column&quot;&gt;
-    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;column&quot;&gt;
-    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre><p>CSS代码如下。</p>
-<pre><code>.box {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-between;
-}
-
-.column {
-  flex-basis: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-</code></pre><h3 id="1-5-六项目"><a href="#1-5-六项目" class="headerlink" title="1.5 六项目"></a>1.5 六项目</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071317.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-between;
-}
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071318.png" alt="">  </p>
-<pre><code>.box {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: space-between;
-}
-</code></pre><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071319.png" alt=""><br>HTML代码如下。</p>
-<pre><code>&lt;div class=&quot;box&quot;&gt;
-  &lt;div class=&quot;row&quot;&gt;
-    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;row&quot;&gt;
-    &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;row&quot;&gt;
-     &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-     &lt;span class=&quot;item&quot;&gt;&lt;/span&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre><p>CSS代码如下。</p>
-<pre><code>.box {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.row{
-  flex-basis: 100%;
-  display:flex;
-}
-
-.row:nth-child(2){
-  justify-content: center;
-}
-
-.row:nth-child(3){
-  justify-content: space-between;
-}
-</code></pre><h3 id="1-6-九项目"><a href="#1-6-九项目" class="headerlink" title="1.6 九项目"></a>1.6 九项目</h3><p><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071320.png" alt="">  </p>
-<h2 id="二、网格布局"><a href="#二、网格布局" class="headerlink" title="二、网格布局"></a>二、网格布局</h2><h3 id="2-1-基本网格布局"><a href="#2-1-基本网格布局" class="headerlink" title="2.1 基本网格布局"></a>2.1 基本网格布局</h3><p>最简单的网格布局，就是平均分布。在容器里面平均分配空间，跟上面的骰子布局很像，但是需要设置项目的自动缩放。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071321.png" alt=""><br>HTML代码如下。</p>
-<pre><code>&lt;div class=&quot;Grid&quot;&gt;
-  &lt;div class=&quot;Grid-cell&quot;&gt;...&lt;/div&gt;
-  &lt;div class=&quot;Grid-cell&quot;&gt;...&lt;/div&gt;
-  &lt;div class=&quot;Grid-cell&quot;&gt;...&lt;/div&gt;
-&lt;/div&gt;
-</code></pre><p>CSS代码如下。</p>
-<pre><code>.Grid {
-  display: flex;
-}
-
-.Grid-cell {
-  flex: 1;
-}
-</code></pre><h3 id="2-2-百分比布局"><a href="#2-2-百分比布局" class="headerlink" title="2.2 百分比布局"></a>2.2 百分比布局</h3><p>某个网格的宽度为固定的百分比，其余网格平均分配剩余的空间。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071322.png" alt=""><br>HTML代码如下。</p>
-<pre><code>&lt;div class=&quot;Grid&quot;&gt;
-  &lt;div class=&quot;Grid-cell u-1of4&quot;&gt;...&lt;/div&gt;
-  &lt;div class=&quot;Grid-cell&quot;&gt;...&lt;/div&gt;
-  &lt;div class=&quot;Grid-cell u-1of3&quot;&gt;...&lt;/div&gt;
-&lt;/div&gt;
-
-
-.Grid {
-  display: flex;
-}
-
-.Grid-cell {
-  flex: 1;
-}
-
-.Grid-cell.u-full {
-  flex: 0 0 100%;
-}
-
-.Grid-cell.u-1of2 {
-  flex: 0 0 50%;
-}
-
-.Grid-cell.u-1of3 {
-  flex: 0 0 33.3333%;
-}
-
-.Grid-cell.u-1of4 {
-  flex: 0 0 25%;
-}
-</code></pre><h2 id="三、圣杯布局"><a href="#三、圣杯布局" class="headerlink" title="三、圣杯布局"></a>三、圣杯布局</h2><p>圣杯布局（Holy Grail Layout）指的是一种最常见的网站布局。页面从上到下，分成三个部分：头部（header），躯干（body），尾部（footer）。其中躯干又水平分成三栏，从左到右为：导航、主栏、副栏。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071323.png" alt=""><br>HTML代码如下。</p>
-<pre><code>&lt;body class=&quot;HolyGrail&quot;&gt;
-  &lt;header&gt;...&lt;/header&gt;
-  &lt;div class=&quot;HolyGrail-body&quot;&gt;
-    &lt;main class=&quot;HolyGrail-content&quot;&gt;...&lt;/main&gt;
-    &lt;nav class=&quot;HolyGrail-nav&quot;&gt;...&lt;/nav&gt;
-    &lt;aside class=&quot;HolyGrail-ads&quot;&gt;...&lt;/aside&gt;
-  &lt;/div&gt;
-  &lt;footer&gt;...&lt;/footer&gt;
-&lt;/body&gt;
-</code></pre><p>CSS代码如下。</p>
-<pre><code>.HolyGrail {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-header,
-footer {
-  flex: 1;
-}
-
-.HolyGrail-body {
-  display: flex;
-  flex: 1;
-}
-
-.HolyGrail-content {
-  flex: 1;
-}
-
-.HolyGrail-nav, .HolyGrail-ads {
-  /* 两个边栏的宽度设为12em */
-  flex: 0 0 12em;
-}
-
-.HolyGrail-nav {
-  /* 导航放到最左边 */
-  order: -1;
-}
-</code></pre><p>如果是小屏幕，躯干的三栏自动变为垂直叠加。</p>
-<pre><code>@media (max-width: 768px) {
-  .HolyGrail-body {
-    flex-direction: column;
-    flex: 1;
-  }
-  .HolyGrail-nav,
-  .HolyGrail-ads,
-  .HolyGrail-content {
-    flex: auto;
-  }
-}
-</code></pre><h2 id="四、输入框的布局"><a href="#四、输入框的布局" class="headerlink" title="四、输入框的布局"></a>四、输入框的布局</h2><p>我们常常需要在输入框的前方添加提示，后方添加按钮。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071324.png" alt=""><br>HTML代码如下。</p>
-<pre><code>&lt;div class=&quot;InputAddOn&quot;&gt;
-  &lt;span class=&quot;InputAddOn-item&quot;&gt;...&lt;/span&gt;
-  &lt;input class=&quot;InputAddOn-field&quot;&gt;
-  &lt;button class=&quot;InputAddOn-item&quot;&gt;...&lt;/button&gt;
-&lt;/div&gt;
-</code></pre><p>CSS代码如下。</p>
-<pre><code>.InputAddOn {
-  display: flex;
-}
-
-.InputAddOn-field {
-  flex: 1;
-}
-</code></pre><h2 id="五、悬挂式布局"><a href="#五、悬挂式布局" class="headerlink" title="五、悬挂式布局"></a>五、悬挂式布局</h2><p>有时，主栏的左侧或右侧，需要添加一个图片栏。<br><img src="http://www.ruanyifeng.com/blogimg/asset/2015/bg2015071325.png" alt=""><br>HTML代码如下。</p>
-<pre><code>&lt;div class=&quot;Media&quot;&gt;
-  &lt;img class=&quot;Media-figure&quot; src=&quot;&quot; alt=&quot;&quot;&gt;
-  &lt;p class=&quot;Media-body&quot;&gt;...&lt;/p&gt;
-&lt;/div&gt;
-</code></pre><p>CSS代码如下。</p>
-<pre><code>.Media {
-  display: flex;
-  align-items: flex-start;
-}
-
-.Media-figure {
-  margin-right: 1em;
-}
-
-.Media-body {
-  flex: 1;
-}
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">CSS布局</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/02/06/fortest/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1307,6 +1062,14 @@ footer {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">gulp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">代码模块化笔记</a>
               </li>
              
@@ -1315,11 +1078,7 @@ footer {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+                <a href="javascript:void(0)" class="js-tag color5">Html</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1327,15 +1086,15 @@ footer {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">犀牛经-读书笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Html</a>
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">犀牛经-读书笔记</a>
               </li>
             
             <div class="clearfix"></div>
